@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  # ============================
+  # WEB: PHP 8.1 + Apache
+  # ============================
+  web:
+    build: .
+    container_name: winmart_web
+    ports:
+      - "80:80"                      # Truy cập: http://localhost/Baitaplon
+    environment:
+      DB_HOST: db                    # Trỏ PHP đến MySQL container
+    volumes:
+      # Mount source code → live reload khi sửa code (dev mode)
+      - .:/var/www/html/Baitaplon
+      # Mount WinmartMVC bằng đường dẫn tương đối để chạy được trên cả Windows và Linux
+      - ../WinmartMVC:/var/www/html/WinmartMVC
+    depends_on:
+      db:
+        condition: service_healthy   # Chờ MySQL sẵn sàng mới khởi động
+    restart: unless-stopped
+    networks:
+      - winmart_net
+
+  # ============================
+  # DATABASE: MySQL 8.0
+  # ============================
+  db:
+    image: mysql:8.0
+    container_name: winmart_db
+    command: --lower_case_table_names=1
+    environment:
+      MYSQL_ROOT_PASSWORD: ""        # Trống (khớp connectDB.php)
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: Baitaplon      # Tự tạo DB khi khởi động lần đầu
+    ports:
+      - "3307:3306"                  # Port 3307 để tránh xung đột XAMPP
+    volumes:
+      - winmart_db_data:/var/lib/mysql          # Lưu dữ liệu bền vững
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql  # Chạy SQL khởi tạo
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - winmart_net
+
+  # ============================
+  # phpMyAdmin (Quản lý DB qua web)
+  # ============================
+  phpmyadmin:
+    image: phpmyadmin:5
+    container_name: winmart_pma
+    ports:
+      - "8080:80"                    # Truy cập: http://localhost:8080
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: ""
+      UPLOAD_LIMIT: 50M
+    depends_on:
+      - db
+    restart: unless-stopped
+    networks:
+      - winmart_net
+
+volumes:
+  winmart_db_data:
+
+networks:
+  winmart_net:
+    driver: bridge

@@ -1,0 +1,258 @@
+/* --- FILE: Public/Css/admin_style.css --- */
+
+:root {
+    --sidebar-bg: #1a237e; /* Xanh đậm (Navy) */
+    --sidebar-text: #ffffff;
+    --hover-bg: #283593;
+    --active-border: #4fc3f7; /* Màu vạch sáng khi active */
+    --main-bg: #f5f7fa;        /* Màu nền xám nhạt */
+    --header-height: 60px;
+    --sidebar-width: 260px;
+}
+
+body { 
+    margin: 0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    
+    /* SỬA DÒNG NÀY: Đổi màu nền xám thành màu xanh đậm của Sidebar */
+    background: var(--sidebar-bg); 
+    
+    display: flex; 
+    overflow-x: hidden;
+}
+
+/* --- 1. SIDEBAR (THANH MENU TRÁI) --- */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    position: fixed;
+    left: 0; top: 0;
+    overflow-y: auto; /* Cho phép cuộn nếu menu dài */
+    transition: 0.3s;
+    z-index: 1000;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+}
+
+/* Scrollbar đẹp cho sidebar */
+.sidebar::-webkit-scrollbar { width: 6px; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+
+.brand {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background-color: #0d47a1; /* Xanh đậm hơn chút cho logo */
+    letter-spacing: 1px;
+}
+
+.menu { list-style: none; padding: 0; margin: 0; }
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    color: #c5cae9; /* Màu chữ hơi xám xanh */
+    text-decoration: none;
+    transition: all 0.3s;
+    border-left: 4px solid transparent;
+    font-size: 14px;
+}
+
+.menu li a:hover, .menu li a.active {
+    background-color: var(--hover-bg);
+    color: #fff;
+    border-left: 4px solid var(--active-border);
+}
+
+.menu li a i { 
+    width: 35px; /* Độ rộng cố định cho icon để chữ thẳng hàng */
+    font-size: 18px; 
+}
+
+.menu-title {
+    padding: 20px 20px 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #7986cb;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* --- 2. MAIN CONTENT (NỘI DUNG PHẢI) --- */
+/* --- FILE: Public/Css/admin_style.css --- */
+
+.main-content {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    
+    
+    background: transparent; /* QUAN TRỌNG: Để lộ nền xanh */
+}
+/* Header (Thanh trên cùng) */
+header {
+    height: var(--header-height);
+    background: transparent; /* Nền trong suốt */
+    color: #fff; /* Chữ màu trắng */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.page-title h3 { margin: 0; color: #333; font-size: 18px; }
+
+.user-info { display: flex; align-items: center; gap: 15px; font-size: 14px; }
+.user-avatar { 
+    width: 36px; height: 36px; 
+    background: #e0e0e0; 
+    border-radius: 50%; 
+    display: flex; align-items: center; justify-content: center;
+    color: #555;
+}
+
+/* Vùng chứa nội dung động (Pages) */
+/* --- FILE: Public/Css/admin_style.css --- */
+
+/* --- FILE: Public/Css/admin_style.css --- */
+
+/* Vùng chứa nội dung động (Pages) */
+.page-wrapper {
+    /* 1. Màu nền trắng */
+    background-color: #f5f7fa;
+    
+    /* --- SỬA ĐOẠN NÀY --- */
+    /* Thay vì chỉ bo góc trái, ta bo tròn cả 4 góc để tạo hiệu ứng "thẻ nổi" */
+    border-radius: 30px; 
+    /* -------------------- */
+
+    /* 2. TẠO KHOẢNG CÁCH (Quan trọng để nhìn thấy nền xanh xung quanh) */
+    /* Cách Header 10px, Phải 15px, Dưới 20px, Trái 15px */
+    margin: 10px 15px 20px 15px; 
+
+    /* 3. Giới hạn chiều cao để nó nằm gọn trong màn hình */
+    /* Tính toán: 100vh (chiều cao màn hình) - Header - khoảng hở trên dưới */
+    height: calc(100vh - var(--header-height) - 40px);
+    
+    /* 4. Các thuộc tính khác giữ nguyên để tạo bóng đổ và cuộn nội dung */
+    overflow-y: auto; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 30px;
+    box-sizing: border-box; /* Để padding không làm vỡ khung */
+}
+
+/* Tùy chỉnh thanh cuộn bên trong hộp trắng cho đẹp (giữ nguyên) */
+.page-wrapper::-webkit-scrollbar { width: 6px; }
+.page-wrapper::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+
+/* Class chuẩn cho các Card (Khung trắng) trong các trang con */
+/* Sửa lại class .card */
+.card {
+    background: #fff;
+    padding: 25px;
+    
+    /* Tăng độ bo tròn lên */
+    border-radius: 15px; 
+    
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: none; /* Bỏ viền kẻ, dùng bóng đổ cho đẹp */
+}
+
+/* Thêm CSS cho ô nhập liệu (Input) để nó cũng tròn trịa */
+input[type="text"], input[type="password"], select {
+    border-radius: 10px; /* Bo tròn ô nhập */
+    border: 1px solid #e1e4e8;
+    padding: 10px 15px;
+}
+
+/* =========================================
+   STYLE CHO BẢNG DỮ LIỆU (Table Custom)
+   ========================================= */
+
+.table-custom {
+    width: 100%;
+    border-collapse: collapse; /* Gộp đường viền lại cho đẹp */
+    margin-top: 20px; /* Cách form bên trên một chút */
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Đổ bóng nhẹ */
+    border-radius: 8px; /* Bo tròn góc bảng */
+    overflow: hidden; /* Để góc bo tròn không bị vuông đè lên */
+}
+
+/* Phần tiêu đề bảng (Header) */
+.table-custom thead {
+    background-color: #1a237e; /* Màu xanh đậm (trùng màu Sidebar) */
+    color: #ffffff;
+}
+
+.table-custom th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+/* Phần nội dung bảng (Body) */
+.table-custom td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0; /* Kẻ đường mờ bên dưới mỗi dòng */
+    color: #333;
+    vertical-align: middle; /* Căn giữa theo chiều dọc */
+}
+
+/* Hiệu ứng khi di chuột vào dòng */
+.table-custom tbody tr:hover {
+    background-color: #f5f7fa; /* Màu nền xám nhẹ khi hover */
+    transition: 0.2s;
+}
+
+/* Dòng cuối cùng không cần gạch chân */
+.table-custom tbody tr:last-of-type td {
+    border-bottom: 2px solid #1a237e;
+}
+
+/* --- Style cho các nút Sửa / Xóa (Icon) --- */
+.btn-warning, .btn-danger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; 
+    height: 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-right: 5px;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+/* Nút Sửa (Màu vàng cam) */
+.btn-warning {
+    background-color: #fff8e1;
+    color: #ffb300;
+}
+.btn-warning:hover {
+    background-color: #ffb300;
+    color: #fff;
+}
+
+/* Nút Xóa (Màu đỏ nhạt) */
+.btn-danger {
+    background-color: #ffebee;
+    color: #e53935;
+}
+.btn-danger:hover {
+    background-color: #e53935;
+    color: #fff;
+}

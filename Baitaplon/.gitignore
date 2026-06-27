@@ -1,0 +1,17 @@
+# PHPExcel library (nặng, nhưng cần thiết - giữ lại)
+# Nếu dùng Composer thì mới bỏ
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Docker volumes
+winmart_db_data/
+
+# Temp
+*.log
+*.tmp
