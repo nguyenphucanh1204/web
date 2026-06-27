@@ -40,7 +40,7 @@
                 <i class="fas fa-arrow-down"></i> Nhập Hàng Vào Kho
             </div>
             <div class="card-body-custom">
-                <form action="http://localhost/Baitaplon/Khohang/ThemTam" method="POST">
+                <form action="/Baitaplon/Khohang/ThemTam" method="POST">
                     <div class="form-group">
                         <label class="form-label">Chọn Sản Phẩm:</label>
                         <select name="ddlSanPham" class="form-control" required>
@@ -80,7 +80,7 @@
                 <i class="fas fa-file-invoice"></i> Phiếu Nhập Kho (Tạm tính)
             </div>
             <div class="card-body-custom">
-                <form action="http://localhost/Baitaplon/Khohang/LuuPhieu" method="POST">
+                <form action="/Baitaplon/Khohang/LuuPhieu" method="POST">
                     <div class="form-group" style="display: flex; align-items: center; gap: 10px; background: #f1f8ff; padding: 15px; border-radius: 6px;">
                         <label class="form-label" style="margin: 0; white-space: nowrap;">Nhà Cung Cấp:</label>
                         <select name="ddlNCC" class="form-control" style="background: white;">
@@ -112,7 +112,7 @@
                                     <td style="text-align: right;"><?php echo number_format($item['gia']); ?></td>
                                     <td style="text-align: right; font-weight: bold;"><?php echo number_format($thanhtien); ?></td>
                                     <td style="text-align: center;">
-                                        <a href="http://localhost/Baitaplon/Khohang/XoaTam/<?php echo $key; ?>" style="color: #ff4d4f;"><i class="fas fa-trash-alt"></i></a>
+                                        <a href="/Baitaplon/Khohang/XoaTam/<?php echo $key; ?>" style="color: #ff4d4f;"><i class="fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                             <?php } } else { echo "<tr><td colspan='5' style='text-align:center; padding: 20px; color: #999;'>Chưa có sản phẩm nào</td></tr>"; } ?>
@@ -143,15 +143,15 @@
             <div class="card-body-custom">
                 
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                    <form action="http://localhost/Baitaplon/Khohang/Get_data" method="POST" style="display:flex; gap: 10px; flex: 1;">
+                    <form action="/Baitaplon/Khohang/Get_data" method="POST" style="display:flex; gap: 10px; flex: 1;">
                         <input type="text" name="txtTimKiem" class="form-control" placeholder="Tìm theo Mã phiếu hoặc Nhà cung cấp..." 
                                value="<?php echo isset($data['keyword']) ? $data['keyword'] : '' ?>" style="max-width: 300px;">
                         <button type="submit" name="btnTimKiem" class="btn-action btn-search"><i class="fas fa-search"></i> Tìm</button>
-                        <a href="http://localhost/Baitaplon/Khohang" class="btn-action" style="background:#777; width: auto; padding: 8px 15px;"><i class="fas fa-sync"></i></a>
+                        <a href="/Baitaplon/Khohang" class="btn-action" style="background:#777; width: auto; padding: 8px 15px;"><i class="fas fa-sync"></i></a>
                     </form>
 
                     <div style="display: flex; gap: 10px;">
-                        <a href="http://localhost/Baitaplon/Khohang/XuatExcelLichSu" class="btn-action btn-excel"><i class="fas fa-file-excel"></i> Xuất Excel</a>
+                        <a href="/Baitaplon/Khohang/XuatExcelLichSu" class="btn-action btn-excel"><i class="fas fa-file-excel"></i> Xuất Excel</a>
                         <button onclick="document.getElementById('modalImport').style.display='block'" class="btn-action btn-import"><i class="fas fa-file-upload"></i> Nhập Excel</button>
                     </div>
                 </div>
@@ -215,7 +215,7 @@
         <span onclick="document.getElementById('modalImport').style.display='none'" style="float: right; font-size: 28px; cursor: pointer;">&times;</span>
         <h3 style="color: #217346; margin-top: 0;">Nhập Lịch Sử Từ Excel</h3>
         <p style="font-size: 13px; color: #666;">File Excel cần 4 cột: <b>A: Mã (Bỏ qua) | B: Tên NCC | C: Chi tiết SP | D: Ngày | E: Tổng tiền</b></p>
-        <form action="http://localhost/Baitaplon/Khohang/NhapExcelLichSu" method="post" enctype="multipart/form-data">
+        <form action="/Baitaplon/Khohang/NhapExcelLichSu" method="post" enctype="multipart/form-data">
             <input type="file" name="fileExcel" required accept=".xlsx, .xls" style="margin-bottom: 15px; width: 100%; padding: 10px; border: 1px solid #ccc;">
             <button type="submit" name="btnNhapExcel" class="btn-action btn-import" style="width: 100%;">Tải lên hệ thống</button>
         </form>

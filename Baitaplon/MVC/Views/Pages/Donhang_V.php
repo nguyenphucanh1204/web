@@ -113,7 +113,7 @@
     </div>
     
     <div class="search-box">
-        <form action="http://localhost/Baitaplon/Donhang" method="POST" class="search-form">
+        <form action="/Baitaplon/Donhang" method="POST" class="search-form">
             
             <div class="input-wrapper">
                 <i class="fas fa-search search-icon"></i>
@@ -126,7 +126,7 @@
                 Tìm kiếm
             </button>
             
-            <a href="http://localhost/Baitaplon/Donhang" class="btn-reset" title="Tải lại danh sách">
+            <a href="/Baitaplon/Donhang" class="btn-reset" title="Tải lại danh sách">
                 <i class="fas fa-sync-alt" style="margin-right: 5px;"></i> Tất cả
             </a>
         </form>
@@ -167,7 +167,7 @@
                             <span class="price-tag"><?php echo number_format($row['TongTien']); ?> đ</span>
                         </td>
                         <td style="text-align: center;">
-                            <a href="http://localhost/Baitaplon/Donhang/Chitiet/<?php echo $row['MaHD']; ?>" class="btn-view" title="Xem chi tiết hóa đơn">
+                            <a href="/Baitaplon/Donhang/Chitiet/<?php echo $row['MaHD']; ?>" class="btn-view" title="Xem chi tiết hóa đơn">
                                 <i class="fas fa-eye"></i> Chi tiết
                             </a>
                         </td>

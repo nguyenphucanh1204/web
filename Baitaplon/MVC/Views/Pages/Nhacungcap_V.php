@@ -25,7 +25,7 @@
     
     <div class="card-body">
         
-        <form action="http://localhost/Baitaplon/Nhacungcap/Luu" method="post" 
+        <form action="/Baitaplon/Nhacungcap/Luu" method="post" 
               style="background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #e9ecef;">
             
             <?php if($isEdit) { ?>
@@ -69,14 +69,14 @@
                     <?php echo $isEdit ? 'LƯU THAY ĐỔI' : 'THÊM MỚI'; ?>
                 </button>
                 <?php if($isEdit) { ?>
-                    <a href="http://localhost/Baitaplon/Nhacungcap" class="btn-custom btn-gray" style="margin-left:10px">Hủy bỏ</a>
+                    <a href="/Baitaplon/Nhacungcap" class="btn-custom btn-gray" style="margin-left:10px">Hủy bỏ</a>
                 <?php } ?>
             </div>
         </form>
 
         <div class="search-box" style="justify-content: space-between;">
             
-            <form action="http://localhost/Baitaplon/Nhacungcap/Get_data" method="POST" style="display:flex; gap: 10px; flex: 1;">
+            <form action="/Baitaplon/Nhacungcap/Get_data" method="POST" style="display:flex; gap: 10px; flex: 1;">
                 <div style="flex: 1; position: relative;">
                     <i class="fas fa-search" style="position: absolute; left: 10px; top: 10px; color: #888;"></i>
                     <input type="text" name="txtTimKiem" class="form-control" 
@@ -85,11 +85,11 @@
                            style="padding-left: 35px;">
                 </div>
                 <button type="submit" name="btnTimKiem" class="btn-custom btn-blue">Tìm kiếm</button>
-                <a href="http://localhost/Baitaplon/Nhacungcap" class="btn-custom btn-gray"><i class="fas fa-sync-alt"></i> Tất cả</a>
+                <a href="/Baitaplon/Nhacungcap" class="btn-custom btn-gray"><i class="fas fa-sync-alt"></i> Tất cả</a>
             </form>
 
             <div style="display:flex; gap: 10px;">
-                <a href="http://localhost/Baitaplon/Nhacungcap/XuatExcel" class="btn-custom" style="background: #217346; color:white;">
+                <a href="/Baitaplon/Nhacungcap/XuatExcel" class="btn-custom" style="background: #217346; color:white;">
                     <i class="fas fa-file-excel"></i> Xuất Excel
                 </a>
                 
@@ -124,10 +124,10 @@
                         <td><?php echo $row['DienThoai']; ?></td>
                         <td><?php echo $row['DiaChi']; ?></td>
                         <td>
-                            <a href="http://localhost/Baitaplon/Nhacungcap/Sua/<?php echo $row['MaNCC']; ?>" class="btn-custom btn-orange" style="padding: 5px 10px;">
+                            <a href="/Baitaplon/Nhacungcap/Sua/<?php echo $row['MaNCC']; ?>" class="btn-custom btn-orange" style="padding: 5px 10px;">
                                 <i class="fas fa-pen"></i>
                             </a>
-                            <a href="http://localhost/Baitaplon/Nhacungcap/Xoa/<?php echo $row['MaNCC']; ?>" onclick="return confirm('Xóa nhà cung cấp này?')" class="btn-custom btn-red" style="padding: 5px 10px;">
+                            <a href="/Baitaplon/Nhacungcap/Xoa/<?php echo $row['MaNCC']; ?>" onclick="return confirm('Xóa nhà cung cấp này?')" class="btn-custom btn-red" style="padding: 5px 10px;">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
@@ -158,7 +158,7 @@
             <b>A: Mã Nhà Cung Cấp | B: Tên Nhà Cung Cấp | C: SDT  |  D: Địa chỉ</b>
         </p>
         
-        <form action="http://localhost/Baitaplon/Nhacungcap/NhapExcel" method="post" enctype="multipart/form-data">
+        <form action="/Baitaplon/Nhacungcap/NhapExcel" method="post" enctype="multipart/form-data">
             <label style="display:block; margin-bottom:5px; font-weight:bold;">Chọn file Excel:</label>
             <input type="file" name="fileExcel" class="form-control" required accept=".xlsx, .xls" style="margin-bottom: 15px;">
             

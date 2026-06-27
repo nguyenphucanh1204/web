@@ -26,14 +26,14 @@
 <div class="filter-bar">
     <div style="font-weight: bold; color: #555;"><i class="fas fa-filter"></i> Lọc thời gian (Cho mục Bán chạy):</div>
     
-    <form action="http://localhost/Baitaplon/Baocao/Get_data" method="POST" style="display:flex; gap:10px; align-items:center;">
+    <form action="/Baitaplon/Baocao/Get_data" method="POST" style="display:flex; gap:10px; align-items:center;">
         <input type="date" name="txtTuNgay" value="<?php echo $data['tungay']; ?>" class="form-control" style="padding: 5px 10px; border:1px solid #ccc; border-radius:4px;">
         <span>đến</span>
         <input type="date" name="txtDenNgay" value="<?php echo $data['denngay']; ?>" class="form-control" style="padding: 5px 10px; border:1px solid #ccc; border-radius:4px;">
         <button type="submit" class="btn-view">Xem</button>
     </form>
 
-    <form action="http://localhost/Baitaplon/Baocao/XuatExcel" method="POST" style="margin-left: auto;">
+    <form action="/Baitaplon/Baocao/XuatExcel" method="POST" style="margin-left: auto;">
         <input type="hidden" name="txtTuNgayEx" value="<?php echo $data['tungay']; ?>">
         <input type="hidden" name="txtDenNgayEx" value="<?php echo $data['denngay']; ?>">
         <button type="submit" class="btn-export"><i class="fas fa-file-excel"></i> Xuất Excel Bán Chạy</button>

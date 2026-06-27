@@ -27,7 +27,7 @@
     
     <div class="card-body">
         
-        <form action="http://localhost/Baitaplon/Sanpham/<?php echo isset($data['editData']) ? 'CapNhat' : 'Themmoi'; ?>" 
+        <form action="/Baitaplon/Sanpham/<?php echo isset($data['editData']) ? 'CapNhat' : 'Themmoi'; ?>" 
               method="post" enctype="multipart/form-data" 
               style="background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #e9ecef;">
 
@@ -107,7 +107,7 @@
                     <div style="display: flex; gap: 10px; align-items: center;">
                         <input type="file" name="txtHinhAnh" class="form-control" style="padding: 5px;">
                         <?php if(isset($data['editData']) && $data['editData']['HinhAnh'] != ""){ ?>
-                            <img src="http://localhost/Baitaplon/Public/Images/<?php echo $data['editData']['HinhAnh'] ?>" width="40px" style="border: 1px solid #ccc; border-radius: 4px;">
+                            <img src="/Baitaplon/Public/Images/<?php echo $data['editData']['HinhAnh'] ?>" width="40px" style="border: 1px solid #ccc; border-radius: 4px;">
                         <?php } ?>
                     </div>
                 </div>
@@ -122,14 +122,14 @@
                 </button>
                 
                 <?php if(isset($data['editData'])) { ?>
-                    <a href="http://localhost/Baitaplon/Sanpham" class="btn-custom btn-gray" style="margin-left: 10px;">Hủy bỏ</a>
+                    <a href="/Baitaplon/Sanpham" class="btn-custom btn-gray" style="margin-left: 10px;">Hủy bỏ</a>
                 <?php } ?>
             </div>
         </form>
 
         <div class="search-box" style="justify-content: space-between;">
             
-            <form action="http://localhost/Baitaplon/Sanpham" method="POST" style="display:flex; gap: 10px; flex: 1;">
+            <form action="/Baitaplon/Sanpham" method="POST" style="display:flex; gap: 10px; flex: 1;">
                 <div style="flex: 1; position: relative;">
                     <i class="fas fa-search" style="position: absolute; left: 10px; top: 10px; color: #888;"></i>
                     <input type="text" name="txtTimKiem" class="form-control" 
@@ -138,11 +138,11 @@
                            style="padding-left: 35px;">
                 </div>
                 <button type="submit" name="btnTimKiem" class="btn-custom btn-blue">Tìm</button>
-                <a href="http://localhost/Baitaplon/Sanpham" class="btn-custom btn-gray"><i class="fas fa-sync-alt"></i></a>
+                <a href="/Baitaplon/Sanpham" class="btn-custom btn-gray"><i class="fas fa-sync-alt"></i></a>
             </form>
 
             <div style="display:flex; gap: 10px;">
-                <a href="http://localhost/Baitaplon/Sanpham/XuatExcel" class="btn-custom" style="background: #217346; color:white;">
+                <a href="/Baitaplon/Sanpham/XuatExcel" class="btn-custom" style="background: #217346; color:white;">
                     <i class="fas fa-file-excel"></i> Xuất Excel
                 </a>
                 
@@ -173,7 +173,7 @@
                     <tr>
                         <td style="text-align: center;">
                             <?php if($row['HinhAnh'] != "" && $row['HinhAnh'] != "no-image.jpg"){ ?>
-                                <img src="http://localhost/Baitaplon/Public/Images/<?php echo $row['HinhAnh'] ?>" width="40px" height="40px" style="object-fit: cover; border-radius: 4px; border: 1px solid #eee;">
+                                <img src="/Baitaplon/Public/Images/<?php echo $row['HinhAnh'] ?>" width="40px" height="40px" style="object-fit: cover; border-radius: 4px; border: 1px solid #eee;">
                             <?php } else { ?>
                                 <i class="fas fa-image" style="color: #ccc; font-size: 24px;"></i>
                             <?php } ?>
@@ -200,10 +200,10 @@
                             ?>
                         </td>
                         <td>
-                            <a href="http://localhost/Baitaplon/Sanpham/Sua/<?php echo $row['MaSP']; ?>" class="btn-custom btn-orange" style="padding: 5px 10px; font-size: 12px;" title="Sửa">
+                            <a href="/Baitaplon/Sanpham/Sua/<?php echo $row['MaSP']; ?>" class="btn-custom btn-orange" style="padding: 5px 10px; font-size: 12px;" title="Sửa">
                                 <i class="fas fa-pen"></i>
                             </a>
-                            <a href="http://localhost/Baitaplon/Sanpham/Xoa/<?php echo $row['MaSP']; ?>" onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này không?')" class="btn-custom btn-red" style="padding: 5px 10px; font-size: 12px;" title="Xóa">
+                            <a href="/Baitaplon/Sanpham/Xoa/<?php echo $row['MaSP']; ?>" onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này không?')" class="btn-custom btn-red" style="padding: 5px 10px; font-size: 12px;" title="Xóa">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
@@ -234,7 +234,7 @@
             Thứ tự cột: <i>A: Mã | B: Tên | C: Mã DM | D: Mã NCC | E: Giá | F: Số lượng | G: Ảnh | <b>H: HSD</b></i>
         </p>
         
-        <form action="http://localhost/Baitaplon/Sanpham/NhapExcel" method="post" enctype="multipart/form-data">
+        <form action="/Baitaplon/Sanpham/NhapExcel" method="post" enctype="multipart/form-data">
             <label style="display:block; margin-bottom:5px; font-weight:bold;">Chọn file Excel:</label>
             
             <input type="file" name="fileExcel" class="form-control" required accept=".xlsx, .xls" style="margin-bottom: 15px;">

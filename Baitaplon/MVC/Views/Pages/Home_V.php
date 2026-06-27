@@ -133,7 +133,7 @@
             </tbody>
         </table>
         <div style="text-align:center; margin-top:15px;">
-            <a href="http://localhost/Baitaplon/Donhang" style="font-size:13px; text-decoration:none; color:#4099ff;">Xem tất cả đơn hàng &rarr;</a>
+            <a href="/Baitaplon/Donhang" style="font-size:13px; text-decoration:none; color:#4099ff;">Xem tất cả đơn hàng &rarr;</a>
         </div>
     </div>
 </div>

@@ -64,7 +64,7 @@
             </div>
             <div style="padding: 20px;">
                 
-                <form action="http://localhost/Baitaplon/Phuongthuc/Luu" method="POST" enctype="multipart/form-data">
+                <form action="/Baitaplon/Phuongthuc/Luu" method="POST" enctype="multipart/form-data">
                     
                     <?php if($isEdit) { ?>
                         <input type="hidden" name="txtID" value="<?php echo $row_edit['MaPT']; ?>">
@@ -81,7 +81,7 @@
                         <input type="file" name="fileHinh" class="form-control" accept="image/*">
                         <?php if($isEdit && !empty($row_edit['HinhAnh'])) { ?>
                             <div style="margin-top:10px; font-size:12px; color:#666;">
-                                <img src="http://localhost/Baitaplon/Public/Images/<?php echo $row_edit['HinhAnh']; ?>" style="height:60px; border:1px solid #eee;">
+                                <img src="/Baitaplon/Public/Images/<?php echo $row_edit['HinhAnh']; ?>" style="height:60px; border:1px solid #eee;">
                                 <br>Ảnh hiện tại (Chọn mới để thay thế)
                             </div>
                         <?php } ?>
@@ -104,7 +104,7 @@
                     </button>
                     
                     <?php if($isEdit) { ?>
-                        <a href="http://localhost/Baitaplon/Phuongthuc" class="btn-action" style="background:#6c757d; margin-top:10px; display:block; text-align:center; text-decoration:none;">Hủy bỏ</a>
+                        <a href="/Baitaplon/Phuongthuc" class="btn-action" style="background:#6c757d; margin-top:10px; display:block; text-align:center; text-decoration:none;">Hủy bỏ</a>
                     <?php } ?>
                 </form>
             </div>
@@ -135,7 +135,7 @@
                                 <td style="text-align:center; color:#888;">#<?php echo $row['MaPT']; ?></td>
                                 <td style="font-weight: 600;">
                                     <?php if(!empty($row['HinhAnh'])) { ?>
-                                        <img src="http://localhost/Baitaplon/Public/Images/<?php echo $row['HinhAnh']; ?>" class="qr-thumb">
+                                        <img src="/Baitaplon/Public/Images/<?php echo $row['HinhAnh']; ?>" class="qr-thumb">
                                     <?php } else { ?>
                                         <span class="qr-placeholder">NO QR</span>
                                     <?php } ?>
@@ -150,10 +150,10 @@
                                     <?php } ?>
                                 </td>
                                 <td style="text-align:center;">
-                                    <a href="http://localhost/Baitaplon/Phuongthuc/Sua/<?php echo $row['MaPT']; ?>" style="color:#ffc107; margin-right:10px; font-size:16px;">
+                                    <a href="/Baitaplon/Phuongthuc/Sua/<?php echo $row['MaPT']; ?>" style="color:#ffc107; margin-right:10px; font-size:16px;">
                                         <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <a href="http://localhost/Baitaplon/Phuongthuc/Xoa/<?php echo $row['MaPT']; ?>" onclick="return confirm('Xóa phương thức này?')" style="color:#dc3545; font-size:16px;">
+                                    <a href="/Baitaplon/Phuongthuc/Xoa/<?php echo $row['MaPT']; ?>" onclick="return confirm('Xóa phương thức này?')" style="color:#dc3545; font-size:16px;">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </td>

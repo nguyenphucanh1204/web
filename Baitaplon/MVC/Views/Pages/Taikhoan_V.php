@@ -50,7 +50,7 @@
                 <i class="fas fa-user-shield"></i> <?php echo $isEdit ? 'Cập Nhật Tài Khoản' : 'Thêm Tài Khoản Mới'; ?>
             </div>
             <div style="padding: 20px;">
-                <form action="http://localhost/Baitaplon/Taikhoan/Save" method="post">
+                <form action="/Baitaplon/Taikhoan/Save" method="post">
                     <input type="hidden" name="txtID" value="<?php echo $isEdit ? $row_edit['id'] : ''; ?>">
                     <div class="form-group">
                         <label class="form-label">Tên đăng nhập (Username):</label>
@@ -86,7 +86,7 @@
                         <?php echo $isEdit ? 'LƯU THAY ĐỔI' : 'THÊM TÀI KHOẢN'; ?>
                     </button>
                     <?php if($isEdit) { ?>
-                        <a href="http://localhost/Baitaplon/Taikhoan" class="btn-action" style="background:#6c757d; margin-top:10px; display:block; text-align:center; text-decoration:none;">Hủy bỏ</a>
+                        <a href="/Baitaplon/Taikhoan" class="btn-action" style="background:#6c757d; margin-top:10px; display:block; text-align:center; text-decoration:none;">Hủy bỏ</a>
                     <?php } ?>
                 </form>
             </div>
@@ -103,16 +103,16 @@
                 
                 <div class="search-container" style="justify-content: space-between; align-items: center;">
                     
-                    <form action="http://localhost/Baitaplon/Taikhoan/Get_data" method="POST" style="display:flex; gap: 10px; flex: 1;">
+                    <form action="/Baitaplon/Taikhoan/Get_data" method="POST" style="display:flex; gap: 10px; flex: 1;">
                         <input type="text" name="txtTimKiem" class="form-control" 
                                placeholder="Nhập Username hoặc Họ tên..." 
                                value="<?php echo (isset($data['keyword']) && $data['keyword']!='') ? $data['keyword'] : '' ?>">
                         <button type="submit" name="btnTimKiem" class="btn-search"><i class="fas fa-search"></i> Tìm</button>
-                        <a href="http://localhost/Baitaplon/Taikhoan" class="btn-search" style="background:#6c757d; display:flex; align-items:center; text-decoration:none;" title="Tải lại"><i class="fas fa-sync-alt"></i></a>
+                        <a href="/Baitaplon/Taikhoan" class="btn-search" style="background:#6c757d; display:flex; align-items:center; text-decoration:none;" title="Tải lại"><i class="fas fa-sync-alt"></i></a>
                     </form>
 
                     <div style="display:flex; gap: 10px;">
-                        <a href="http://localhost/Baitaplon/Taikhoan/XuatExcel" class="btn-action btn-save" style="width:auto; padding: 0 15px; display:flex; align-items:center; text-decoration:none; background: #217346;">
+                        <a href="/Baitaplon/Taikhoan/XuatExcel" class="btn-action btn-save" style="width:auto; padding: 0 15px; display:flex; align-items:center; text-decoration:none; background: #217346;">
                             <i class="fas fa-file-excel" style="margin-right:5px;"></i> Xuất
                         </a>
                         
@@ -164,12 +164,12 @@
                                     <?php } ?>
                                 </td>
                                 <td style="text-align:center;">
-                                    <a href="http://localhost/Baitaplon/Taikhoan/Sua/<?php echo $row['id']; ?>" style="color:#ff9800; margin-right:10px; font-size:16px;" title="Sửa">
+                                    <a href="/Baitaplon/Taikhoan/Sua/<?php echo $row['id']; ?>" style="color:#ff9800; margin-right:10px; font-size:16px;" title="Sửa">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     
                                     <?php if($row['id'] != 1) { ?>
-                                        <a href="http://localhost/Baitaplon/Taikhoan/Xoa/<?php echo $row['id']; ?>" onclick="return confirm('Xóa tài khoản <?php echo $row['username']; ?>?')" style="color:#dc3545; font-size:16px;" title="Xóa">
+                                        <a href="/Baitaplon/Taikhoan/Xoa/<?php echo $row['id']; ?>" onclick="return confirm('Xóa tài khoản <?php echo $row['username']; ?>?')" style="color:#dc3545; font-size:16px;" title="Xóa">
                                             <i class="fas fa-trash-alt"></i>
                                         </a>
                                     <?php } else { ?>
@@ -241,7 +241,7 @@
             <b>A: Username | B: Mật khẩu | C: Họ Tên | D: Quyền (1=Admin, 0=User)</b>
         </p>
         
-        <form action="http://localhost/Baitaplon/Taikhoan/NhapExcel" method="post" enctype="multipart/form-data">
+        <form action="/Baitaplon/Taikhoan/NhapExcel" method="post" enctype="multipart/form-data">
             <label style="display:block; margin-bottom:5px; font-weight:bold;">Chọn file Excel (.xlsx, .xls):</label>
             <input type="file" name="fileExcel" class="form-control" required accept=".xlsx, .xls" style="margin-bottom: 15px;">
             

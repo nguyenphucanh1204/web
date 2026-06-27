@@ -25,7 +25,7 @@
     
     <div class="card-body">
         
-        <form action="http://localhost/Baitaplon/Danhmuc/Luu" method="post" 
+        <form action="/Baitaplon/Danhmuc/Luu" method="post" 
               style="background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #e9ecef;">
             
             <?php if($isEdit) { ?>
@@ -62,7 +62,7 @@
                 </button>
                 
                 <?php if($isEdit) { ?>
-                    <a href="http://localhost/Baitaplon/Danhmuc" class="btn-custom btn-gray" style="margin-left: 10px;">Hủy bỏ</a>
+                    <a href="/Baitaplon/Danhmuc" class="btn-custom btn-gray" style="margin-left: 10px;">Hủy bỏ</a>
                 <?php } ?>
             </div>
         </form>
@@ -71,7 +71,7 @@
 
         <div class="search-box" style="justify-content: space-between;">
             
-            <form action="http://localhost/Baitaplon/Danhmuc/Get_data" method="POST" style="display:flex; gap: 10px; flex: 1;">
+            <form action="/Baitaplon/Danhmuc/Get_data" method="POST" style="display:flex; gap: 10px; flex: 1;">
                 <div style="flex: 1; position: relative;">
                     <i class="fas fa-search" style="position: absolute; left: 10px; top: 10px; color: #888;"></i>
                     <input type="text" name="txtTimKiem" class="form-control" 
@@ -80,11 +80,11 @@
                            style="padding-left: 35px;">
                 </div>
                 <button type="submit" name="btnTimKiem" class="btn-custom btn-blue">Tìm kiếm</button>
-                <a href="http://localhost/Baitaplon/Danhmuc" class="btn-custom btn-gray"><i class="fas fa-sync-alt"></i> Tất cả</a>
+                <a href="/Baitaplon/Danhmuc" class="btn-custom btn-gray"><i class="fas fa-sync-alt"></i> Tất cả</a>
             </form>
 
             <div style="display:flex; gap: 10px;">
-                <a href="http://localhost/Baitaplon/Danhmuc/XuatExcel" class="btn-custom" style="background: #217346; color:white;">
+                <a href="/Baitaplon/Danhmuc/XuatExcel" class="btn-custom" style="background: #217346; color:white;">
                     <i class="fas fa-file-excel"></i> Xuất Excel
                 </a>
                 
@@ -121,10 +121,10 @@
                         <td style="font-weight: 600; color: #333; font-size: 15px;"><?php echo $row['TenDM']; ?></td>
                         <td style="color: #666;"><?php echo isset($row['MoTa']) ? $row['MoTa'] : ''; ?></td>
                         <td>
-                            <a href="http://localhost/Baitaplon/Danhmuc/Sua/<?php echo $row['MaDM']; ?>" class="btn-custom btn-orange" style="padding: 5px 10px; font-size: 12px;">
+                            <a href="/Baitaplon/Danhmuc/Sua/<?php echo $row['MaDM']; ?>" class="btn-custom btn-orange" style="padding: 5px 10px; font-size: 12px;">
                                 <i class="fas fa-pen"></i>
                             </a>
-                            <a href="http://localhost/Baitaplon/Danhmuc/Xoa/<?php echo $row['MaDM']; ?>" onclick="return confirm('Xóa danh mục này sẽ ảnh hưởng đến các sản phẩm thuộc về nó. Bạn chắc chắn chứ?')" class="btn-custom btn-red" style="padding: 5px 10px; font-size: 12px;">
+                            <a href="/Baitaplon/Danhmuc/Xoa/<?php echo $row['MaDM']; ?>" onclick="return confirm('Xóa danh mục này sẽ ảnh hưởng đến các sản phẩm thuộc về nó. Bạn chắc chắn chứ?')" class="btn-custom btn-red" style="padding: 5px 10px; font-size: 12px;">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
@@ -155,7 +155,7 @@
             <b>A: Mã Danh Mục | B: Tên Danh Mục | C: Mô Tả</b>
         </p>
         
-        <form action="http://localhost/Baitaplon/Danhmuc/NhapExcel" method="post" enctype="multipart/form-data">
+        <form action="/Baitaplon/Danhmuc/NhapExcel" method="post" enctype="multipart/form-data">
             <label style="display:block; margin-bottom:5px; font-weight:bold;">Chọn file Excel:</label>
             <input type="file" name="fileExcel" class="form-control" required accept=".xlsx, .xls" style="margin-bottom: 15px;">
             

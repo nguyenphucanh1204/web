@@ -31,7 +31,7 @@ class Phuongthuc extends controller {
                 $id = $_POST['txtID'];
                 $trangthai = $_POST['ddlTrangThai'];
                 $this->ptModel->Sua($id, $ten, $trangthai, $hinh);
-                echo "<script>alert('Cập nhật thành công!'); window.location.href='http://localhost/Baitaplon/Phuongthuc';</script>";
+                echo "<script>alert('Cập nhật thành công!'); window.location.href='/Baitaplon/Phuongthuc';</script>";
             } else {
                 // --- THÊM ---
                 if($this->ptModel->CheckTrung($ten)){
@@ -39,7 +39,7 @@ class Phuongthuc extends controller {
                     return;
                 }
                 $this->ptModel->Them($ten, $hinh);
-                echo "<script>alert('Thêm mới thành công!'); window.location.href='http://localhost/Baitaplon/Phuongthuc';</script>";
+                echo "<script>alert('Thêm mới thành công!'); window.location.href='/Baitaplon/Phuongthuc';</script>";
             }
         }
     }
@@ -54,7 +54,7 @@ class Phuongthuc extends controller {
     }
     public function Xoa($id) {
         $this->ptModel->Xoa($id);
-        header("Location: http://localhost/Baitaplon/Phuongthuc");
+        header("Location: /Baitaplon/Phuongthuc");
     }
 }
 ?>

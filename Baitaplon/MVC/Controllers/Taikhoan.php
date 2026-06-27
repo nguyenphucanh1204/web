@@ -50,14 +50,14 @@ class Taikhoan extends Controller {
             }
             
             // Quay về trang chính
-            echo "<script>window.location.href='http://localhost/Baitaplon/Taikhoan';</script>";
+            echo "<script>window.location.href='/Baitaplon/Taikhoan';</script>";
         }
     }
 
     // 4. Xóa
     function Xoa($id){
         $this->tkModel->Delete($id);
-        header("Location: http://localhost/Baitaplon/Taikhoan");
+        header("Location: /Baitaplon/Taikhoan");
     }
 
     // --- 5. XUẤT EXCEL ---
@@ -149,7 +149,7 @@ class Taikhoan extends Controller {
                             }
                         }
                     }
-                    echo "<script>alert('Đã nhập thành công $count tài khoản!'); window.location.href='http://localhost/Baitaplon/Taikhoan';</script>";
+                    echo "<script>alert('Đã nhập thành công $count tài khoản!'); window.location.href='/Baitaplon/Taikhoan';</script>";
 
                 } catch (Exception $e) {
                     echo "<script>alert('Lỗi: " . $e->getMessage() . "'); window.history.back();</script>";

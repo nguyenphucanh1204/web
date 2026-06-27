@@ -61,7 +61,7 @@
                 <i class="fas fa-magic"></i> <?php echo $isEdit ? 'Cập Nhật Mã Giảm Giá' : 'Tạo Mã Khuyến Mãi'; ?>
             </div>
             <div style="padding: 20px;">
-                <form action="http://localhost/Baitaplon/Khuyenmai/Luu" method="POST">
+                <form action="/Baitaplon/Khuyenmai/Luu" method="POST">
                     
                     <?php if($isEdit) { ?>
                         <input type="hidden" name="txtID" value="<?php echo $row_edit['MaKM']; ?>">
@@ -96,7 +96,7 @@
                     </button>
                     
                     <?php if($isEdit) { ?>
-                        <a href="http://localhost/Baitaplon/Khuyenmai" class="btn-action" style="background:#6c757d; margin-top:10px; display:block; text-align:center; text-decoration:none;">Hủy bỏ</a>
+                        <a href="/Baitaplon/Khuyenmai" class="btn-action" style="background:#6c757d; margin-top:10px; display:block; text-align:center; text-decoration:none;">Hủy bỏ</a>
                     <?php } ?>
                 </form>
 
@@ -117,16 +117,16 @@
                 
                 <div class="search-container" style="justify-content: space-between; align-items: center;">
                     
-                    <form action="http://localhost/Baitaplon/Khuyenmai/Get_data" method="POST" style="display:flex; gap: 10px; flex: 1;">
+                    <form action="/Baitaplon/Khuyenmai/Get_data" method="POST" style="display:flex; gap: 10px; flex: 1;">
                         <input type="text" name="txtTimKiem" class="form-control" 
                                placeholder="Nhập mã code cần tìm..." 
                                value="<?php echo (isset($data['keyword']) && $data['keyword']!='') ? $data['keyword'] : '' ?>">
                         <button type="submit" name="btnTimKiem" class="btn-search"><i class="fas fa-search"></i> Tìm</button>
-                        <a href="http://localhost/Baitaplon/Khuyenmai" class="btn-search" style="background:#6c757d; display:flex; align-items:center; text-decoration:none;" title="Tải lại"><i class="fas fa-sync-alt"></i></a>
+                        <a href="/Baitaplon/Khuyenmai" class="btn-search" style="background:#6c757d; display:flex; align-items:center; text-decoration:none;" title="Tải lại"><i class="fas fa-sync-alt"></i></a>
                     </form>
 
                     <div style="display:flex; gap: 10px;">
-                        <a href="http://localhost/Baitaplon/Khuyenmai/XuatExcel" class="btn-action btn-save" style="width:auto; padding: 0 15px; display:flex; align-items:center; text-decoration:none; background: #217346;">
+                        <a href="/Baitaplon/Khuyenmai/XuatExcel" class="btn-action btn-save" style="width:auto; padding: 0 15px; display:flex; align-items:center; text-decoration:none; background: #217346;">
                             <i class="fas fa-file-excel" style="margin-right:5px;"></i> Xuất
                         </a>
                         
@@ -166,10 +166,10 @@
                                     <?php } ?>
                                 </td>
                                 <td style="text-align:center;">
-                                    <a href="http://localhost/Baitaplon/Khuyenmai/Sua/<?php echo $row['MaKM']; ?>" style="color:#ff9800; margin-right:15px; font-size:16px;" title="Sửa">
+                                    <a href="/Baitaplon/Khuyenmai/Sua/<?php echo $row['MaKM']; ?>" style="color:#ff9800; margin-right:15px; font-size:16px;" title="Sửa">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="http://localhost/Baitaplon/Khuyenmai/Xoa/<?php echo $row['MaKM']; ?>" onclick="return confirm('Bạn chắc chắn muốn xóa mã này?')" style="color:#dc3545; font-size:16px;" title="Xóa">
+                                    <a href="/Baitaplon/Khuyenmai/Xoa/<?php echo $row['MaKM']; ?>" onclick="return confirm('Bạn chắc chắn muốn xóa mã này?')" style="color:#dc3545; font-size:16px;" title="Xóa">
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                 </td>
@@ -205,7 +205,7 @@
             <b>A: Mã Code | B: Số Tiền Giảm | C: Số Lượng</b>
         </p>
         
-        <form action="http://localhost/Baitaplon/Khuyenmai/NhapExcel" method="post" enctype="multipart/form-data">
+        <form action="/Baitaplon/Khuyenmai/NhapExcel" method="post" enctype="multipart/form-data">
             <label style="display:block; margin-bottom:5px; font-weight:bold;">Chọn file Excel (.xlsx, .xls):</label>
             <input type="file" name="fileExcel" class="form-control" required accept=".xlsx, .xls" style="margin-bottom: 15px;">
             

@@ -42,7 +42,7 @@
                     </button>
                     
                     <?php if($row['id'] != 1) { ?>
-                    <a href="http://localhost/Baitaplon/Taikhoan/Delete/<?php echo $row['id'] ?>" onclick="return confirm('Xóa tài khoản này?')" class="btn-red">
+                    <a href="/Baitaplon/Taikhoan/Delete/<?php echo $row['id'] ?>" onclick="return confirm('Xóa tài khoản này?')" class="btn-red">
                         <i class="fas fa-trash"></i>
                     </a>
                     <?php } ?>
@@ -58,7 +58,7 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <h3 id="modalTitle" style="margin-top: 0; text-align: center; color: #e31d2b;">Thêm Tài khoản</h3>
         
-        <form action="http://localhost/Baitaplon/Taikhoan/Save" method="POST">
+        <form action="/Baitaplon/Taikhoan/Save" method="POST">
             <input type="hidden" name="id" id="userId">
 
             <div class="form-group">

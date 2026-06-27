@@ -105,7 +105,7 @@
             </div>
             <div class="card-body" style="flex: 1; overflow: hidden; display: flex; flex-direction: column;">
                 
-                <form action="http://localhost/Baitaplon/Banhang/Get_data" method="POST" class="search-box">
+                <form action="/Baitaplon/Banhang/Get_data" method="POST" class="search-box">
                     <input type="text" name="txtTimKiem" class="input-search" 
                            placeholder="Nhập tên hoặc mã sản phẩm (F4)..." 
                            value="<?php echo isset($data['keyword']) ? $data['keyword'] : ''; ?>">
@@ -113,7 +113,7 @@
                         <i class="fas fa-search"></i> TÌM
                     </button>
                     <?php if(isset($data['keyword']) && $data['keyword'] != '') { ?>
-                        <a href="http://localhost/Baitaplon/Banhang" class="btn-clear" title="Xóa tìm kiếm">X</a>
+                        <a href="/Baitaplon/Banhang" class="btn-clear" title="Xóa tìm kiếm">X</a>
                     <?php } ?>
                 </form>
 
@@ -123,12 +123,12 @@
                         while($row = mysqli_fetch_array($data['sp'])){
                     ?>
                         <div class="product-item">
-                            <img src="http://localhost/Baitaplon/Public/Images/<?php echo $row['HinhAnh'] ?>" class="prod-img">
+                            <img src="/Baitaplon/Public/Images/<?php echo $row['HinhAnh'] ?>" class="prod-img">
                             <div>
                                 <div class="prod-name" title="<?php echo $row['TenSP']; ?>"><?php echo $row['TenSP']; ?></div>
                                 <div class="prod-price"><?php echo number_format($row['GiaBan']); ?> đ</div>
                             </div>
-                            <a href="http://localhost/Baitaplon/Banhang/ThemGioHang/<?php echo $row['MaSP']; ?>" 
+                            <a href="/Baitaplon/Banhang/ThemGioHang/<?php echo $row['MaSP']; ?>" 
                                class="btn-primary" style="display:block; font-size:12px; padding:6px;">
                                + Thêm
                             </a>
@@ -148,7 +148,7 @@
                 <h3 style="font-size: 16px; margin:0;"><i class="fas fa-shopping-cart"></i> Hóa Đơn</h3>
             </div>
             <div class="card-body" style="flex: 1; overflow-y: auto; padding: 15px;">
-                <form action="http://localhost/Baitaplon/Banhang/ThanhToan" method="post" style="height: 100%; display: flex; flex-direction: column;">
+                <form action="/Baitaplon/Banhang/ThanhToan" method="post" style="height: 100%; display: flex; flex-direction: column;">
                     
                     <div style="display: flex; gap: 10px; margin-bottom: 10px;">
                         <div style="flex: 1;">
@@ -183,7 +183,7 @@
                                         <td style='padding:6px;'>{$item['ten']}</td>
                                         <td style='padding:6px; text-align:center; font-weight:bold;'>{$item['soluong']}</td>
                                         <td style='padding:6px; text-align:right;'>".number_format($thanhtien)."</td>
-                                        <td style='padding:6px;'><a href='http://localhost/Baitaplon/Banhang/XoaGioHang/{$item['id']}' style='color:red;'>×</a></td>
+                                        <td style='padding:6px;'><a href='/Baitaplon/Banhang/XoaGioHang/{$item['id']}' style='color:red;'>×</a></td>
                                     </tr>";
                                 }
                             } 
@@ -210,7 +210,7 @@
     }
     ?>
 </select>
-                        <button type="submit" name="btnApDung" formaction="http://localhost/Baitaplon/Banhang/ApDungMa" class="btn-primary" style="background:#ffc107; border:none; color:#333; font-size: 12px; padding: 0 10px; white-space:nowrap;">Áp dụng</button>
+                        <button type="submit" name="btnApDung" formaction="/Baitaplon/Banhang/ApDungMa" class="btn-primary" style="background:#ffc107; border:none; color:#333; font-size: 12px; padding: 0 10px; white-space:nowrap;">Áp dụng</button>
                     </div>
 
                     <div style="text-align:right; border-top:1px solid #eee; padding-top:5px; margin-bottom: 10px;">
@@ -230,7 +230,7 @@
                                 $name_lower = mb_strtolower($pt['TenPT'], 'UTF-8');
                                 if(strpos($name_lower, 'khoản')!==false) $icon = 'fa-university';
                                 if(strpos($name_lower, 'momo')!==false) $icon = 'fa-qrcode';
-                                $qrLink = !empty($pt['HinhAnh']) ? "http://localhost/Baitaplon/Public/Images/".$pt['HinhAnh'] : "";
+                                $qrLink = !empty($pt['HinhAnh']) ? "/Baitaplon/Public/Images/".$pt['HinhAnh'] : "";
                         ?>
                             <input type="radio" name="radPhuongThuc" id="pt_<?php echo $pt['MaPT']; ?>" 
                                    class="payment-option" value="<?php echo $pt['MaPT']; ?>" <?php echo $checked; ?>
@@ -282,7 +282,7 @@
                     <button type="submit" name="btnThanhToan" class="btn-primary" style="width:100%; padding:12px; font-size:15px; margin-top:auto; border-radius:30px; font-weight:bold; box-shadow:0 3px 8px rgba(0,0,0,0.2);">
                         THANH TOÁN
                     </button>
-                    <a href="http://localhost/Baitaplon/Banhang/HuyDon" style="display:block; text-align:center; margin-top:10px; color:#888; font-size:12px;">Hủy đơn</a>
+                    <a href="/Baitaplon/Banhang/HuyDon" style="display:block; text-align:center; margin-top:10px; color:#888; font-size:12px;">Hủy đơn</a>
                 </form>
             </div>
         </div>

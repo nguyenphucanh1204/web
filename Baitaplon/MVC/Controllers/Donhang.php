@@ -45,7 +45,7 @@ class Donhang extends controller {
             // NẾU KHÔNG TÌM THẤY: Thông báo và đẩy về trang danh sách
             echo "<script>
                     alert('Đơn hàng không tồn tại hoặc đã bị xóa!');
-                    window.location.href = 'http://localhost/Baitaplon/Donhang';
+                    window.location.href = '/Baitaplon/Donhang';
                   </script>";
         }
     }

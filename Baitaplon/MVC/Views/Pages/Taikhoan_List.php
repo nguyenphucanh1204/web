@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
         <h3>Danh sách Tài khoản</h3>
-        <a href="http://localhost/Baitaplon/Taikhoan/Create" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px;">
+        <a href="/Baitaplon/Taikhoan/Create" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px;">
             <i class="fas fa-plus"></i> Thêm mới
         </a>
     </div>
@@ -33,10 +33,10 @@
                         ?>
                     </td>
                     <td style="padding: 10px; text-align: center;">
-                        <a href="http://localhost/Baitaplon/Taikhoan/Edit/<?php echo $row['id'] ?>" style="color: #ffc107; margin-right: 10px; font-size: 18px;"><i class="fas fa-edit"></i></a>
+                        <a href="/Baitaplon/Taikhoan/Edit/<?php echo $row['id'] ?>" style="color: #ffc107; margin-right: 10px; font-size: 18px;"><i class="fas fa-edit"></i></a>
                         
                         <?php if($row['id'] != 1) { ?>
-                        <a href="http://localhost/Baitaplon/Taikhoan/Delete/<?php echo $row['id'] ?>" onclick="return confirm('Bạn có chắc muốn xóa?')" style="color: #dc3545; font-size: 18px;"><i class="fas fa-trash-alt"></i></a>
+                        <a href="/Baitaplon/Taikhoan/Delete/<?php echo $row['id'] ?>" onclick="return confirm('Bạn có chắc muốn xóa?')" style="color: #dc3545; font-size: 18px;"><i class="fas fa-trash-alt"></i></a>
                         <?php } ?>
                     </td>
                 </tr>

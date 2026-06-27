@@ -350,7 +350,7 @@
     </div>
 
     <div class="action-buttons">
-        <a href="http://localhost/Baitaplon/Donhang" class="btn-back">
+        <a href="/Baitaplon/Donhang" class="btn-back">
             <i class="fas fa-arrow-left"></i> Quay lại
         </a>
         <button onclick="window.print()" class="btn-print">

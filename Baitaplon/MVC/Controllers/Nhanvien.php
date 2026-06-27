@@ -37,13 +37,13 @@ class Nhanvien extends controller {
             
             // Gọi hàm Them trong Model (lưu ý Model cũng phải sửa bỏ tham số mật khẩu)
             $this->nvModel->Them($manv, $ten, $email, $chucvu);
-            echo "<script>alert('Thêm nhân viên thành công!'); window.location.href='http://localhost/Baitaplon/Nhanvien';</script>";
+            echo "<script>alert('Thêm nhân viên thành công!'); window.location.href='/Baitaplon/Nhanvien';</script>";
         }
     }
 
     public function Xoa($id) {
         $this->nvModel->Xoa($id);
-        header("Location: http://localhost/Baitaplon/Nhanvien");
+        header("Location: /Baitaplon/Nhanvien");
     }
 
     public function Sua($id) {
@@ -64,7 +64,7 @@ class Nhanvien extends controller {
             
             // Gọi hàm Sua trong Model (lưu ý Model cũng phải sửa bỏ tham số mật khẩu)
             $this->nvModel->Sua($manv, $ten, $email, $chucvu);
-            echo "<script>alert('Cập nhật thành công!'); window.location.href='http://localhost/Baitaplon/Nhanvien';</script>";
+            echo "<script>alert('Cập nhật thành công!'); window.location.href='/Baitaplon/Nhanvien';</script>";
         }
     }
 
@@ -158,7 +158,7 @@ class Nhanvien extends controller {
                             $count++;
                         }
                     }
-                    echo "<script>alert('Đã nhập thành công $count nhân viên!'); window.location.href='http://localhost/Baitaplon/Nhanvien';</script>";
+                    echo "<script>alert('Đã nhập thành công $count nhân viên!'); window.location.href='/Baitaplon/Nhanvien';</script>";
 
                 } catch (Exception $e) {
                     echo "<script>alert('Lỗi: " . $e->getMessage() . "'); window.history.back();</script>";

@@ -4,7 +4,7 @@
         <h3>Sửa thông tin tài khoản: <?php echo $row['username'] ?></h3>
     </div>
     <div class="card-body">
-        <form action="http://localhost/Baitaplon/Taikhoan/Update/<?php echo $row['id'] ?>" method="POST">
+        <form action="/Baitaplon/Taikhoan/Update/<?php echo $row['id'] ?>" method="POST">
             
             <div style="margin-bottom: 15px;">
                 <label>Tên đăng nhập</label>
@@ -30,7 +30,7 @@
             </div>
 
             <button type="submit" name="btnLuu" style="background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Cập nhật</button>
-            <a href="http://localhost/Baitaplon/Taikhoan" style="margin-left: 10px; text-decoration: none; color: #666;">Hủy bỏ</a>
+            <a href="/Baitaplon/Taikhoan" style="margin-left: 10px; text-decoration: none; color: #666;">Hủy bỏ</a>
         </form>
     </div>
 </div>

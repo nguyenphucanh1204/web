@@ -49,14 +49,14 @@ class Sanpham extends controller {
             }
 
             $this->spModel->InsertSanpham($masp, $tensp, $madm, $mancc, $gia, $soluong, $hinhanh, $hsd);
-            echo "<script>alert('Thêm thành công!'); window.location.href='http://localhost/Baitaplon/Sanpham';</script>";
+            echo "<script>alert('Thêm thành công!'); window.location.href='/Baitaplon/Sanpham';</script>";
         }
     }
 
     // 3. Xóa (Giữ nguyên)
     public function Xoa($masp) {
         $this->spModel->DeleteSanpham($masp);
-        header("Location: http://localhost/Baitaplon/Sanpham");
+        header("Location: /Baitaplon/Sanpham");
     }
 
     // 4. Sửa (Giữ nguyên)
@@ -88,7 +88,7 @@ class Sanpham extends controller {
             }
 
             $this->spModel->UpdateSanpham($masp, $tensp, $madm, $mancc, $gia, $soluong, $hinhanh, $hsd);
-            echo "<script>alert('Cập nhật thành công!'); window.location.href='http://localhost/Baitaplon/Sanpham';</script>";
+            echo "<script>alert('Cập nhật thành công!'); window.location.href='/Baitaplon/Sanpham';</script>";
         }
     }
 
@@ -193,7 +193,7 @@ class Sanpham extends controller {
                             $count++;
                         }
                     }
-                    echo "<script>alert('Đã nhập thành công $count sản phẩm!'); window.location.href='http://localhost/Baitaplon/Sanpham';</script>";
+                    echo "<script>alert('Đã nhập thành công $count sản phẩm!'); window.location.href='/Baitaplon/Sanpham';</script>";
 
                 } catch (Exception $e) {
                     echo "<script>alert('Lỗi: " . $e->getMessage() . "'); window.history.back();</script>";

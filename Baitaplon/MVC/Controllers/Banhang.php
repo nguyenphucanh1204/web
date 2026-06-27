@@ -46,7 +46,7 @@ class Banhang extends controller {
             if (($current_qty + 1) > $row['SoLuongTon']) {
                 echo "<script>
                         alert('Không thể thêm! Sản phẩm [".$row['TenSP']."] chỉ còn tồn ".$row['SoLuongTon']." cái.');
-                        window.location.href='http://localhost/Baitaplon/Banhang';
+                        window.location.href='/Baitaplon/Banhang';
                       </script>";
                 return; // Dừng ngay, không chạy đoạn code thêm bên dưới
             }
@@ -64,18 +64,18 @@ class Banhang extends controller {
                 ];
             }
         }
-        header("Location: http://localhost/Baitaplon/Banhang");
+        header("Location: /Baitaplon/Banhang");
     }
 
     public function XoaGioHang($id) { 
         if(isset($_SESSION['giohang'][$id])) unset($_SESSION['giohang'][$id]); 
-        header("Location: http://localhost/Baitaplon/Banhang"); 
+        header("Location: /Baitaplon/Banhang"); 
     }
     
     public function HuyDon() { 
         unset($_SESSION['giohang']); 
         unset($_SESSION['giamgia']); 
-        header("Location: http://localhost/Baitaplon/Banhang"); 
+        header("Location: /Baitaplon/Banhang"); 
     }
     
     public function ApDungMa() {
@@ -84,10 +84,10 @@ class Banhang extends controller {
             if(mysqli_num_rows($kq) > 0) {
                 $row = mysqli_fetch_array($kq);
                 $_SESSION['giamgia'] = ['MaKM'=>$row['MaKM'], 'TenMa'=>$row['TenMa'], 'SoTien'=>$row['SoTienGiam']];
-                echo "<script>alert('Áp dụng thành công!'); window.location.href='http://localhost/Baitaplon/Banhang';</script>";
+                echo "<script>alert('Áp dụng thành công!'); window.location.href='/Baitaplon/Banhang';</script>";
             } else {
                 unset($_SESSION['giamgia']);
-                echo "<script>alert('Mã sai!'); window.location.href='http://localhost/Baitaplon/Banhang';</script>";
+                echo "<script>alert('Mã sai!'); window.location.href='/Baitaplon/Banhang';</script>";
             }
         }
     }
@@ -104,7 +104,7 @@ class Banhang extends controller {
                 if($item['soluong'] > $rowCheck['SoLuongTon']) {
                     echo "<script>
                             alert('Lỗi thanh toán: Sản phẩm [".$item['ten']."] hiện chỉ còn ".$rowCheck['SoLuongTon']." cái (Bạn mua ".$item['soluong']."). Vui lòng điều chỉnh lại!');
-                            window.location.href='http://localhost/Baitaplon/Banhang';
+                            window.location.href='/Baitaplon/Banhang';
                           </script>";
                     return; // Hủy thanh toán
                 }
@@ -127,7 +127,7 @@ class Banhang extends controller {
                 $this->model("KhachhangModel")->TichDiem($makh, $final);
                 unset($_SESSION['giohang']); 
                 unset($_SESSION['giamgia']);
-                echo "<script>alert('Thanh toán thành công!'); window.location.href='http://localhost/Baitaplon/Banhang';</script>";
+                echo "<script>alert('Thanh toán thành công!'); window.location.href='/Baitaplon/Banhang';</script>";
             }
         }
     }

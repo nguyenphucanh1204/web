@@ -32,13 +32,13 @@ class Khachhang extends controller {
 
             // 2. Thêm mới
             $this->khModel->Them($id, $ten, $sdt);
-            echo "<script>alert('Thêm khách hàng thành công!'); window.location.href='http://localhost/Baitaplon/Khachhang';</script>";
+            echo "<script>alert('Thêm khách hàng thành công!'); window.location.href='/Baitaplon/Khachhang';</script>";
         }
     }
 
     public function Xoa($id) {
         $this->khModel->Xoa($id);
-        header("Location: http://localhost/Baitaplon/Khachhang");
+        header("Location: /Baitaplon/Khachhang");
     }
 
     public function Sua($id) {
@@ -57,7 +57,7 @@ class Khachhang extends controller {
             
             $this->khModel->Sua($id, $ten, $sdt);
             
-            echo "<script>alert('Cập nhật thông tin thành công!'); window.location.href='http://localhost/Baitaplon/Khachhang';</script>";
+            echo "<script>alert('Cập nhật thông tin thành công!'); window.location.href='/Baitaplon/Khachhang';</script>";
         }
     }
 
@@ -149,7 +149,7 @@ class Khachhang extends controller {
                             $count++;
                         }
                     }
-                    echo "<script>alert('Đã nhập thành công $count danh mục!'); window.location.href='http://localhost/Baitaplon/Khachhang';</script>";
+                    echo "<script>alert('Đã nhập thành công $count danh mục!'); window.location.href='/Baitaplon/Khachhang';</script>";
 
                 } catch (Exception $e) {
                     echo "<script>alert('Lỗi: " . $e->getMessage() . "'); window.history.back();</script>";

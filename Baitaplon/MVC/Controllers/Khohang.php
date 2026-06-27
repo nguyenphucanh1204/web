@@ -53,7 +53,7 @@ class Khohang extends controller {
             $_SESSION['gio_nhap'][] = $item;
 
             // Quay lại trang nhập hàng
-            header("Location: http://localhost/Baitaplon/Khohang");
+            header("Location: /Baitaplon/Khohang");
         }
     }
 
@@ -63,7 +63,7 @@ class Khohang extends controller {
             unset($_SESSION['gio_nhap'][$index]); // Xóa phần tử tại vị trí $index
             $_SESSION['gio_nhap'] = array_values($_SESSION['gio_nhap']); // Sắp xếp lại chỉ số mảng (0,1,2...) tránh lỗi
         }
-        header("Location: http://localhost/Baitaplon/Khohang");
+        header("Location: /Baitaplon/Khohang");
     }
 
     // 4. Lưu phiếu nhập chính thức (Ghi vào Database)
@@ -85,13 +85,13 @@ class Khohang extends controller {
 
             if($kq) {
                 unset($_SESSION['gio_nhap']); // Xóa session sau khi lưu thành công
-                echo "<script>alert('Nhập kho thành công!'); window.location.href='http://localhost/Baitaplon/Khohang';</script>";
+                echo "<script>alert('Nhập kho thành công!'); window.location.href='/Baitaplon/Khohang';</script>";
             } else {
-                echo "<script>alert('Lỗi nhập kho! Vui lòng kiểm tra lại.'); window.location.href='http://localhost/Baitaplon/Khohang';</script>";
+                echo "<script>alert('Lỗi nhập kho! Vui lòng kiểm tra lại.'); window.location.href='/Baitaplon/Khohang';</script>";
             }
 
         } else {
-            echo "<script>alert('Chưa chọn sản phẩm nào!'); window.location.href='http://localhost/Baitaplon/Khohang';</script>";
+            echo "<script>alert('Chưa chọn sản phẩm nào!'); window.location.href='/Baitaplon/Khohang';</script>";
         }
     }
 
@@ -214,7 +214,7 @@ class Khohang extends controller {
                             $count++;
                         }
                     }
-                    echo "<script>alert('Đã import thành công $count phiếu nhập!'); window.location.href='http://localhost/Baitaplon/Khohang';</script>";
+                    echo "<script>alert('Đã import thành công $count phiếu nhập!'); window.location.href='/Baitaplon/Khohang';</script>";
 
                 } catch (Exception $e) {
                     echo "<script>alert('Lỗi: " . $e->getMessage() . "'); window.history.back();</script>";
@@ -261,7 +261,7 @@ class Khohang extends controller {
             ];
 
             $_SESSION['gio_kiem'][] = $item;
-            header("Location: http://localhost/Baitaplon/Khohang/KiemKe");
+            header("Location: /Baitaplon/Khohang/KiemKe");
         }
     }
 
@@ -271,7 +271,7 @@ class Khohang extends controller {
             unset($_SESSION['gio_kiem'][$index]);
             $_SESSION['gio_kiem'] = array_values($_SESSION['gio_kiem']);
         }
-        header("Location: http://localhost/Baitaplon/Khohang/KiemKe");
+        header("Location: /Baitaplon/Khohang/KiemKe");
     }
 
     // 8. Lưu phiếu kiểm (Cân bằng kho)
@@ -284,9 +284,9 @@ class Khohang extends controller {
             $this->khoModel->LuuKiemKho($manv, $ghichu, $_SESSION['gio_kiem']);
             
             unset($_SESSION['gio_kiem']);
-            echo "<script>alert('Đã cân bằng kho thành công!'); window.location.href='http://localhost/Baitaplon/Khohang/KiemKe';</script>";
+            echo "<script>alert('Đã cân bằng kho thành công!'); window.location.href='/Baitaplon/Khohang/KiemKe';</script>";
         } else {
-            echo "<script>alert('Chưa có sản phẩm nào!'); window.location.href='http://localhost/Baitaplon/Khohang/KiemKe';</script>";
+            echo "<script>alert('Chưa có sản phẩm nào!'); window.location.href='/Baitaplon/Khohang/KiemKe';</script>";
         }
     }
 
@@ -384,7 +384,7 @@ class Khohang extends controller {
                             $count++;
                         }
                     }
-                    echo "<script>alert('Đã import $count phiếu kiểm kê!'); window.location.href='http://localhost/Baitaplon/Khohang/KiemKe';</script>";
+                    echo "<script>alert('Đã import $count phiếu kiểm kê!'); window.location.href='/Baitaplon/Khohang/KiemKe';</script>";
                 } catch (Exception $e) {
                     echo "<script>alert('Lỗi: " . $e->getMessage() . "'); window.history.back();</script>";
                 }

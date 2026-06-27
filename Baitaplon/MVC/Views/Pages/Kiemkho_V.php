@@ -29,7 +29,7 @@
 </style>
 
 <div style="margin-bottom: 20px;">
-    <a href="http://localhost/Baitaplon/Sanpham" class="btn-action" style="background: #6c757d; width: auto; padding: 10px 20px;">
+    <a href="/Baitaplon/Sanpham" class="btn-action" style="background: #6c757d; width: auto; padding: 10px 20px;">
         <i class="fas fa-arrow-left"></i> Quay lại Danh Sách Sản Phẩm
     </a>
 </div>
@@ -42,7 +42,7 @@
                 <i class="fas fa-search"></i> Chọn Sản Phẩm Kiểm Tra
             </div>
             <div class="card-body-custom">
-                <form action="http://localhost/Baitaplon/Khohang/ThemKiem" method="POST">
+                <form action="/Baitaplon/Khohang/ThemKiem" method="POST">
                     <div class="form-group">
                         <label class="form-label">Sản Phẩm:</label>
                         <select name="ddlSanPham" class="form-control" required>
@@ -75,7 +75,7 @@
                 <i class="fas fa-clipboard-check"></i> Phiếu Kiểm Kê (Chưa lưu)
             </div>
             <div class="card-body-custom">
-                <form action="http://localhost/Baitaplon/Khohang/LuuPhieuKiem" method="POST">
+                <form action="/Baitaplon/Khohang/LuuPhieuKiem" method="POST">
                     <div class="form-group">
                         <label class="form-label">Ghi chú cho đợt kiểm kê này:</label>
                         <input type="text" name="txtGhiChu" class="form-control" placeholder="VD: Kiểm kho cuối tháng 12..." required>
@@ -108,7 +108,7 @@
                                     </td>
                                     <td><?php echo $item['lydo']; ?></td>
                                     <td style="text-align: center;">
-                                        <a href="http://localhost/Baitaplon/Khohang/XoaKiem/<?php echo $key; ?>" style="color: #ff4d4f;"><i class="fas fa-trash-alt"></i></a>
+                                        <a href="/Baitaplon/Khohang/XoaKiem/<?php echo $key; ?>" style="color: #ff4d4f;"><i class="fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                             <?php } } else { echo "<tr><td colspan='6' style='text-align:center; padding: 20px; color: #999;'>Chưa có sản phẩm nào</td></tr>"; } ?>
@@ -135,15 +135,15 @@
             <div class="card-body-custom">
                 
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                    <form action="http://localhost/Baitaplon/Khohang/KiemKe" method="POST" style="display:flex; gap: 10px; flex: 1;">
+                    <form action="/Baitaplon/Khohang/KiemKe" method="POST" style="display:flex; gap: 10px; flex: 1;">
                         <input type="text" name="txtTimKiem" class="form-control" placeholder="Tìm theo Mã phiếu hoặc Ghi chú..." 
                                value="<?php echo isset($data['keyword']) ? $data['keyword'] : '' ?>" style="max-width: 300px;">
                         <button type="submit" name="btnTimKiem" class="btn-action btn-search"><i class="fas fa-search"></i> Tìm</button>
-                        <a href="http://localhost/Baitaplon/Khohang/KiemKe" class="btn-action" style="background:#777; width: auto; padding: 8px 15px;"><i class="fas fa-sync"></i></a>
+                        <a href="/Baitaplon/Khohang/KiemKe" class="btn-action" style="background:#777; width: auto; padding: 8px 15px;"><i class="fas fa-sync"></i></a>
                     </form>
 
                     <div style="display: flex; gap: 10px;">
-                        <a href="http://localhost/Baitaplon/Khohang/XuatExcelKiemKe" class="btn-action btn-excel"><i class="fas fa-file-excel"></i> Xuất Excel</a>
+                        <a href="/Baitaplon/Khohang/XuatExcelKiemKe" class="btn-action btn-excel"><i class="fas fa-file-excel"></i> Xuất Excel</a>
                         <button onclick="document.getElementById('modalImportKiem').style.display='block'" class="btn-action btn-import"><i class="fas fa-file-upload"></i> Nhập Excel</button>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
         <span onclick="document.getElementById('modalImportKiem').style.display='none'" style="float: right; font-size: 28px; cursor: pointer;">&times;</span>
         <h3 style="color: #217346; margin-top: 0;">Nhập Lịch Sử Kiểm Kê</h3>
         <p style="font-size: 13px; color: #666;">File Excel cần 4 cột: <b>MaPK (Bỏ) | Ghi Chú | Chi Tiết | Ngày</b></p>
-        <form action="http://localhost/Baitaplon/Khohang/NhapExcelKiemKe" method="post" enctype="multipart/form-data">
+        <form action="/Baitaplon/Khohang/NhapExcelKiemKe" method="post" enctype="multipart/form-data">
             <input type="file" name="fileExcel" required accept=".xlsx, .xls" style="margin-bottom: 15px; width: 100%; padding: 10px; border: 1px solid #ccc;">
             <button type="submit" name="btnNhapExcel" class="btn-action btn-import" style="width: 100%;">Tải lên hệ thống</button>
         </form>

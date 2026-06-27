@@ -23,7 +23,7 @@ function Authentication(){
 
                 // 2. [QUAN TRỌNG] Chuyển hướng sang folder Baitaplon
                 // Vì Baitaplon là thư mục riêng, nên ta điền trực tiếp link localhost
-                header("Location: http://localhost/Baitaplon/"); 
+                header("Location: /Baitaplon/"); 
                 exit;
             } else {
                 echo "<script>alert('Sai tài khoản hoặc mật khẩu!'); window.location.href='".BASE_URL."Login';</script>";

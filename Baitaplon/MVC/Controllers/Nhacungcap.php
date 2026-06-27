@@ -30,7 +30,7 @@ class Nhacungcap extends controller {
                 // --- SỬA ---
                 $id = $_POST['txtID'];
                 $this->nccModel->Sua($id, $macode, $ten, $sdt, $diachi);
-                echo "<script>alert('Cập nhật thành công!'); window.location.href='http://localhost/Baitaplon/Nhacungcap';</script>";
+                echo "<script>alert('Cập nhật thành công!'); window.location.href='/Baitaplon/Nhacungcap';</script>";
             } else {
                 // --- THÊM MỚI (Có Check Trùng) ---
                 if($this->nccModel->CheckTrungMa($macode)) {
@@ -39,7 +39,7 @@ class Nhacungcap extends controller {
                 }
                 
                 $this->nccModel->Them($macode, $ten, $sdt, $diachi);
-                echo "<script>alert('Thêm mới thành công!'); window.location.href='http://localhost/Baitaplon/Nhacungcap';</script>";
+                echo "<script>alert('Thêm mới thành công!'); window.location.href='/Baitaplon/Nhacungcap';</script>";
             }
         }
     }
@@ -55,7 +55,7 @@ class Nhacungcap extends controller {
 
     public function Xoa($id) {
         $this->nccModel->Xoa($id);
-        header("Location: http://localhost/Baitaplon/Nhacungcap");
+        header("Location: /Baitaplon/Nhacungcap");
     }
 
 
@@ -146,7 +146,7 @@ class Nhacungcap extends controller {
                             $count++;
                         }
                     }
-                    echo "<script>alert('Đã nhập thành công $count danh mục!'); window.location.href='http://localhost/Baitaplon/Nhacungcap';</script>";
+                    echo "<script>alert('Đã nhập thành công $count danh mục!'); window.location.href='/Baitaplon/Nhacungcap';</script>";
 
                 } catch (Exception $e) {
                     echo "<script>alert('Lỗi: " . $e->getMessage() . "'); window.history.back();</script>";

@@ -1,7 +1,7 @@
 <?php
 // 1. Định nghĩa đường dẫn gốc (Quan trọng nhất)
 // Hãy thay 'WinmartMVC' bằng tên thư mục thực tế trong htdocs của bạn
-define("BASE_URL", "http://localhost/WinmartMVC/");
+define("BASE_URL", "/WinmartMVC/");
 
 // 2. Load các file Core
 require_once "./Core/app.php";
